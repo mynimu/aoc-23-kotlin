@@ -3,6 +3,7 @@ package day04
 import utils.assertEquals
 import utils.println
 import utils.readInput
+import kotlin.math.pow
 
 
 private val dir = object {}.javaClass.`package`.name
@@ -25,14 +26,7 @@ fun main() {
     fun part1(input: List<String>): Int {
         return input.sumOf {
             val (_, winCards) = parseGame(it)
-
-            if (winCards == 0) {
-                0
-            } else {
-                (1..winCards).reduce { a, _ ->
-                    a * 2
-                }
-            }
+           2f.pow(winCards-1).toInt()
         }
     }
 
